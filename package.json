@@ -1,11 +1,12 @@
 {
-  "name": "livo-coverage-information",
+  "name": "@css-ch/livo-coverage-information",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:prd": "ng build --output-hashing=none",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "prepare": "husky",
@@ -52,5 +53,21 @@
     "prettier": "3.5.3",
     "storybook": "^8.6.7",
     "typescript": "~5.8.0"
-  }
+  },
+  "description": "A web component to check coverage information for livo supplementary insurance",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/css-ch/livo-coverage-information.git"
+  },
+  "author": "Gianmarco Wyss",
+  "license": "CSS Versicherung",
+  "bugs": {
+    "url": "https://github.com/css-ch/livo-coverage-information/issues"
+  },
+  "homepage": "https://www.css.ch/",
+  "files": [
+    "CHANGELOG.md",
+    "dist"
+  ]
 }
