@@ -89,6 +89,11 @@ jobs:
           node-version-file: '.nvmrc'
           cache: npm
 
+      - name: Install dependencies for husky
+        run: npm install is-ci husky --no-save
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.PACKAGES_READ_PAT }}
+
       - uses: actions/download-artifact@v4
         with:
           name: build-output
