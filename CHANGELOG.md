@@ -1,3 +1,12 @@
+## [0.1.3](https://github.com/css-ch/livo-coverage-information/compare/v0.1.2...v0.1.3) (2025-03-21)
+
+
+### Bug Fixes
+
+* remove private property from package.json ([85701f1](https://github.com/css-ch/livo-coverage-information/commit/85701f1dd56fc6f205b53eafbc6f7c06107d8e35))
+
+
+
 ## [0.1.2](https://github.com/css-ch/livo-coverage-information/compare/v0.1.1...v0.1.2) (2025-03-21)
 
 
