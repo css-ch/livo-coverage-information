@@ -76,7 +76,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: build-output
-          path: dist/livo-coverage-info
+          path: dist/livo-coverage-information
 
   publish:
     needs: build
