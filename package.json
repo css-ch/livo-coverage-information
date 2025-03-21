@@ -68,5 +68,8 @@
   "files": [
     "CHANGELOG.md",
     "dist"
-  ]
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/css-ch/livo-coverage-information"
+  }
 }
