@@ -1,4 +1,13 @@
-# 0.1.0 (2025-03-21)
+## [0.1.1](https://github.com/css-ch/livo-coverage-information/compare/v0.1.0...v0.1.1) (2025-03-21)
+
+
+### Bug Fixes
+
+* wrong path ([e3f76c7](https://github.com/css-ch/livo-coverage-information/commit/e3f76c70abcdde8c04f4182e79cd8511622c3db0))
+
+
+
+# [0.1.0](https://github.com/css-ch/livo-coverage-information/compare/a0b7cb8feb8f65eb045e7ea87c70ecbfa9e7f102...v0.1.0) (2025-03-21)
 
 
 ### Bug Fixes
