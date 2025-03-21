@@ -1,3 +1,12 @@
+# [0.5.0](https://github.com/css-ch/livo-coverage-information/compare/v0.4.0...v0.5.0) (2025-03-21)
+
+
+### Features
+
+* update build path ([471e0b1](https://github.com/css-ch/livo-coverage-information/commit/471e0b146b749897f13af4f9eef3770b89d11f8f))
+
+
+
 # [0.4.0](https://github.com/css-ch/livo-coverage-information/compare/v0.3.0...v0.4.0) (2025-03-21)
 
 
