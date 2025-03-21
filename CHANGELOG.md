@@ -1,3 +1,12 @@
+# [0.4.0](https://github.com/css-ch/livo-coverage-information/compare/v0.3.0...v0.4.0) (2025-03-21)
+
+
+### Features
+
+* pass tag to build job ([cec8f68](https://github.com/css-ch/livo-coverage-information/commit/cec8f68ff02c548a02a1dbdb81251a7cd5542f67))
+
+
+
 # [0.3.0](https://github.com/css-ch/livo-coverage-information/compare/v0.2.0...v0.3.0) (2025-03-21)
 
 
