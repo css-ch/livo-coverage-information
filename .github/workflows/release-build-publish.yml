@@ -19,6 +19,8 @@ jobs:
         with:
           fetch-depth: '0'
           token: ${{ secrets.PACKAGES_READ_WRITE_PAT }}
+          ref: ${{ github.head_ref }}
+          persist-credentials: false
 
       - uses: actions/setup-node@v4
         with:
