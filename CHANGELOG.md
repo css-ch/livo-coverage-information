@@ -1,3 +1,12 @@
+# [0.2.0](https://github.com/css-ch/livo-coverage-information/compare/v0.1.3...v0.2.0) (2025-03-21)
+
+
+### Features
+
+* add publishConfig to package.json ([8544eaf](https://github.com/css-ch/livo-coverage-information/commit/8544eafbd8964d982070d1ee01742cb1f659e66f))
+
+
+
 ## [0.1.3](https://github.com/css-ch/livo-coverage-information/compare/v0.1.2...v0.1.3) (2025-03-21)
 
 
