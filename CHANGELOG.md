@@ -1,3 +1,12 @@
+# [0.3.0](https://github.com/css-ch/livo-coverage-information/compare/v0.2.0...v0.3.0) (2025-03-21)
+
+
+### Features
+
+* checkout with created tag ([7302e03](https://github.com/css-ch/livo-coverage-information/commit/7302e03f04564ccf53886d861dba7d86487a7315))
+
+
+
 # [0.2.0](https://github.com/css-ch/livo-coverage-information/compare/v0.1.3...v0.2.0) (2025-03-21)
 
 
