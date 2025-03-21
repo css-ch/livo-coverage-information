@@ -1,0 +1,100 @@
+name: Create Release, Build and Publish
+concurrency: release
+
+on:
+  push:
+    branches:
+      -main
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+
+    outputs:
+      tag: ${{ steps.changelog.outputs.tag }}
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: '0'
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+
+      - name: Install conventional-changelog dependencies
+        run: npm install conventional-changelog-conventionalcommits --no-save
+
+      - name: Conventional Changelog Action
+        id: changelog
+        uses: TriPSs/conventional-changelog-action@v6.0.0
+        with:
+          git-user-name: 'web-technical-user'
+          git-user-email: 'web-technical-user@users.noreply.github.com'
+          version-file: './package.json'
+          release-count: 0
+          skip-on-empty: false
+
+      - name: Early exit if no package version bump
+        if: ${{ steps.changelog.outputs.skipped == 'true' }}
+        run: |
+          gh run cancel ${{ github.run_id }}
+          gh run watch ${{ github.run_id }}
+
+      - name: create release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.changelog.outputs.tag }}
+          body: ${{ steps.changelog.outputs.clean_changelog }}
+
+  build:
+    needs: create-release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Remove unnecessary files
+        run: |
+          rm dist/livo-coverage-information/index.html
+          rm dist/livo-coverage-information/prerendered-routes.json
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: build-output
+          path: dist/livo-coverage-info
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: build-output
+          path: dist
+
+      - name: Authenticate with GitHub Registry
+        run: |
+          npm set @css-ch:registry=https://npm.pkg.github.com
+          npm set "//npm.pkg.github.com/:_authToken=${{ secrets.PACKAGES_READ_WRITE_PAT }}"
+
+      - name: Publish
+        run: npm publish
