@@ -10,7 +10,6 @@ on:
 jobs:
   create-release:
     runs-on: ubuntu-latest
-
     outputs:
       tag: ${{ steps.changelog.outputs.tag }}
 
@@ -54,6 +53,9 @@ jobs:
   build:
     needs: create-release
     runs-on: ubuntu-latest
+    outputs:
+      tag:  ${{ needs.create-release.outputs.tag }}
+
     steps:
       - uses: actions/checkout@v4
         with:
@@ -86,7 +88,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ needs.create-release.outputs.tag }}
+          ref: ${{ needs.build.outputs.tag }}
 
       - uses: actions/setup-node@v4
         with:
