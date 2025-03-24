@@ -1,3 +1,13 @@
+# [0.7.0](https://github.com/css-ch/livo-coverage-information/compare/v0.6.1...v0.7.0) (2025-03-24)
+
+
+### Features
+
+* option selectable ([55f1966](https://github.com/css-ch/livo-coverage-information/commit/55f1966afe99fa4d3f6c761a5f57c19c5cf06a1f))
+* working autocomplete ([396e11c](https://github.com/css-ch/livo-coverage-information/commit/396e11cc88b072a50ed0ee485787b87dea0de1d5))
+
+
+
 ## [0.6.1](https://github.com/css-ch/livo-coverage-information/compare/v0.6.0...v0.6.1) (2025-03-24)
 
 
