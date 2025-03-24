@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ServiceProviderService } from './services/service-provider.service';
 import { ServiceProvider } from './models/service-provider.model';
@@ -13,7 +13,7 @@ import { ServiceProvider } from './models/service-provider.model';
 export class AppComponent {
   private serviceProviderService = inject(ServiceProviderService);
   title = 'livo-coverage-information';
-  serviceProviders: ServiceProvider[] = [];
+  serviceProviders = signal<ServiceProvider[]>([]);
 
   constructor() {
     this.getServiceProviders();
@@ -24,7 +24,7 @@ export class AppComponent {
       .getServiceProviders('http://localhost/4200/hospitals')
       .subscribe({
         next: (response) => {
-          this.serviceProviders = response;
+          this.serviceProviders.set(response);
         },
       });
   }
