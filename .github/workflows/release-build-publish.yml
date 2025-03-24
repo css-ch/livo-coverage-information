@@ -16,8 +16,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: '0'
-          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.head_ref }}
+          persist-credentials: false
+          fetch-depth: 0
+          token: ${{ secrets.PACKAGES_READ_WRITE_PAT }}
 
       - uses: actions/setup-node@v4
         with:
