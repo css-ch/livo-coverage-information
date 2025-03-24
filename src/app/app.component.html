@@ -1,5 +1,3 @@
-<p>coverage information</p>
-
-<p>some more information</p>
-
-<p>aaand some more</p>
+@for (serviceProvider of serviceProviders; track serviceProvider.id) {
+  <p>{{ serviceProvider.name }}</p>
+}
