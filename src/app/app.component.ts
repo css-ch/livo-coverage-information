@@ -1,22 +1,71 @@
-import { Component, inject, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject, input, signal } from '@angular/core';
 import { ServiceProviderService } from './services/service-provider.service';
 import { ServiceProvider } from './models/service-provider.model';
+import {
+  MatAutocomplete,
+  MatAutocompleteTrigger,
+  MatOption,
+} from '@angular/material/autocomplete';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { MatFormField, MatInput, MatLabel } from '@angular/material/input';
+import { map, Observable, startWith } from 'rxjs';
+import { AsyncPipe } from '@angular/common';
+import { CoverageComponent } from './features/coverage/coverage.component';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [
+    MatAutocomplete,
+    MatOption,
+    MatFormField,
+    MatLabel,
+    MatInput,
+    MatAutocompleteTrigger,
+    ReactiveFormsModule,
+    AsyncPipe,
+    CoverageComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   standalone: true,
 })
 export class AppComponent {
-  private serviceProviderService = inject(ServiceProviderService);
-  title = 'livo-coverage-information';
+  baseURL = input.required<string>();
   serviceProviders = signal<ServiceProvider[]>([]);
+  private serviceProviderService = inject(ServiceProviderService);
+  formControl = new FormControl('');
+  filteredOptions: Observable<ServiceProvider[]>;
+  isSelected = signal(false);
+  selectedServiceProvider = signal<ServiceProvider | undefined>(undefined);
+
+  private _filterOptions(value: string): ServiceProvider[] {
+    const filterValue = value.toLowerCase();
+    return this.serviceProviders().filter(
+      (provider) =>
+        provider.name.toLowerCase().includes(filterValue) ||
+        provider.town.toLowerCase().includes(filterValue),
+    );
+  }
+
+  optionSelected() {
+    this.isSelected.set(true);
+    this.selectedServiceProvider.set(
+      this.serviceProviders().find(
+        (serviceProvider) => serviceProvider.name === this.formControl.value,
+      ),
+    );
+  }
 
   constructor() {
     this.getServiceProviders();
+    this.filteredOptions = this.formControl.valueChanges.pipe(
+      startWith(''),
+      map((provider) =>
+        provider
+          ? this._filterOptions(provider)
+          : this.serviceProviders().slice(),
+      ),
+    );
   }
 
   getServiceProviders() {

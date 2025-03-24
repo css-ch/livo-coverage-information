@@ -1,3 +1,20 @@
-@for (serviceProvider of serviceProviders(); track serviceProvider.id) {
-  <p>{{ serviceProvider.name }}</p>
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Service Provider</mat-label>
+    <input matInput [formControl]="formControl" [matAutocomplete]="auto" />
+    <mat-autocomplete
+      (optionSelected)="optionSelected()"
+      #auto="matAutocomplete"
+    >
+      @for (serviceProvider of filteredOptions | async; track serviceProvider) {
+        <mat-option [value]="serviceProvider.name"
+          >{{ serviceProvider.name }}, {{ serviceProvider.town }}</mat-option
+        >
+      }
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
+
+@if (isSelected()) {
+  <app-coverage [serviceProvider]="selectedServiceProvider()!"></app-coverage>
 }
