@@ -72,12 +72,13 @@ jobs:
         run: npm install
 
       - name: Build
-        run: npm run build
+        run: npm run build:prd
 
       - name: Remove unnecessary files
         run: |
           rm dist/index.html
           rm dist/prerendered-routes.json
+          rm dist/mockServiceWorker.js
 
       - uses: actions/upload-artifact@v4
         with:
