@@ -1,3 +1,12 @@
+## [0.5.1](https://github.com/css-ch/livo-coverage-information/compare/v0.5.0...v0.5.1) (2025-03-24)
+
+
+### Reverts
+
+* Revert "chore: use github token for checkout" ([3ae396b](https://github.com/css-ch/livo-coverage-information/commit/3ae396b0c740ec355826aa2868502f1333f0a351))
+
+
+
 # [0.5.0](https://github.com/css-ch/livo-coverage-information/compare/v0.4.0...v0.5.0) (2025-03-21)
 
 
