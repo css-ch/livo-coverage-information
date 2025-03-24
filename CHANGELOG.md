@@ -1,3 +1,7 @@
+## [0.6.1](https://github.com/css-ch/livo-coverage-information/compare/v0.6.0...v0.6.1) (2025-03-24)
+
+
+
 # [0.6.0](https://github.com/css-ch/livo-coverage-information/compare/v0.5.1...v0.6.0) (2025-03-24)
 
 

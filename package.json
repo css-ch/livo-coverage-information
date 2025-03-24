@@ -1,6 +1,6 @@
 {
   "name": "@css-ch/livo-coverage-information",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "type": "module",
   "scripts": {
     "ng": "ng",
@@ -13,8 +13,7 @@
     "storybook": "ng run livo-coverage-information:storybook",
     "build-storybook": "ng run livo-coverage-information:build-storybook"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@angular/common": "^19.2.0",
     "@angular/compiler": "^19.2.0",
