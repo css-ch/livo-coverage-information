@@ -1,3 +1,12 @@
+# [0.6.0](https://github.com/css-ch/livo-coverage-information/compare/v0.5.1...v0.6.0) (2025-03-24)
+
+
+### Features
+
+* get data from mock backend ([663d912](https://github.com/css-ch/livo-coverage-information/commit/663d912392e228b017affac99b8f05ddcb16f751))
+
+
+
 ## [0.5.1](https://github.com/css-ch/livo-coverage-information/compare/v0.5.0...v0.5.1) (2025-03-24)
 
 
