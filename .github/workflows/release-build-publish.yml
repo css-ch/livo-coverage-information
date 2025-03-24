@@ -19,7 +19,7 @@ jobs:
           ref: ${{ github.head_ref }}
           persist-credentials: false
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PACKAGES_READ_WRITE_PAT }}
 
       - uses: actions/setup-node@v4
         with:
