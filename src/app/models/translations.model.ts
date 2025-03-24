@@ -1,5 +1,4 @@
 export type Translations = {
-  searchLabel: string;
   serviceProvider: string;
   type: string;
   acute: string;
@@ -8,4 +7,10 @@ export type Translations = {
   psychiatry: string;
   list: string;
   coPayment: string;
+  listBoth: string;
+  listPremium: string;
+  isSpecialClinic: string;
+  variant1: string;
+  variant2: string;
+  variant3: string;
 };

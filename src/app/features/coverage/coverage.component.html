@@ -1,7 +1,12 @@
 <mat-list>
   @for (type of serviceProvider().types; track type) {
-    <mat-list-item>
-      <div>{{type.premium}}: {{type.type}}</div>
-    </mat-list-item>
+    <mat-list-item>{{translations().type}}: {{type.type}}</mat-list-item>
+      <mat-list-item>{{translations().list}}:@if(type.balance && type.premium) { {{translations().listBoth}} } @else {
+        {{translations().listPremium}}
+      }</mat-list-item>
+    <mat-list-item>{{translations().coPayment}}:</mat-list-item>
+    @if (type.special) {
+    <mat-list-item>{{translations().isSpecialClinic}}</mat-list-item>}
+    <mat-divider></mat-divider>
   }
 </mat-list>

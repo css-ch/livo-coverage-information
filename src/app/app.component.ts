@@ -11,6 +11,8 @@ import { MatFormField, MatInput, MatLabel } from '@angular/material/input';
 import { map, Observable, startWith } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 import { CoverageComponent } from './features/coverage/coverage.component';
+import { translationsDe } from '../../translations/translations';
+import { Translations } from './models/translations.model';
 
 @Component({
   selector: 'app-root',
@@ -31,6 +33,7 @@ import { CoverageComponent } from './features/coverage/coverage.component';
 })
 export class AppComponent {
   baseURL = input.required<string>();
+  translations: Translations = translationsDe;
   serviceProviders = signal<ServiceProvider[]>([]);
   private serviceProviderService = inject(ServiceProviderService);
   formControl = new FormControl('');
