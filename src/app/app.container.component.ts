@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, input, OnInit, signal } from '@angular/core';
 import { ServiceProviderService } from './services/service-provider.service';
 import { ServiceProvider } from './models/service-provider.model';
 import { SearchComponent } from './features/search/search.component';
@@ -11,20 +11,21 @@ import { customer } from '../../mock-inputs/customer';
   templateUrl: './app.container.component.html',
   standalone: true,
 })
-export class AppContainerComponent {
-  baseURL = 'http://localhost/4200/hospitals';
+export class AppContainerComponent implements OnInit {
+  baseUrl = input.required<string>();
   translations = translationsDe;
   insurance = customer;
-
   serviceProviders = signal<ServiceProvider[]>([]);
   private serviceProviderService = inject(ServiceProviderService);
 
-  constructor() {
+  constructor() {}
+
+  ngOnInit() {
     this.getServiceProviders();
   }
 
   getServiceProviders() {
-    this.serviceProviderService.getServiceProviders(this.baseURL).subscribe({
+    this.serviceProviderService.getServiceProviders(this.baseUrl()).subscribe({
       next: (response) => {
         this.serviceProviders.set(response);
       },
