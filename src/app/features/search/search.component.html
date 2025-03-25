@@ -1,7 +1,7 @@
 <div class="wrapper">
   <form>
     <mat-form-field class="form-field">
-      <mat-label>{{ translations.serviceProvider }}</mat-label>
+      <mat-label>{{ translations().serviceProvider }}</mat-label>
       <input matInput [formControl]="formControl" [matAutocomplete]="auto" />
       <mat-autocomplete
         (optionSelected)="optionSelected()"
