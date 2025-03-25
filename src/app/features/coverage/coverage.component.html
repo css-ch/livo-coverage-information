@@ -1,12 +1,17 @@
+<b
+  >{{ translatedServiceProvider().name }},
+  {{ translatedServiceProvider().town }}</b
+>
 <mat-list>
-  @for (type of serviceProvider().types; track type) {
-    <mat-list-item>{{translations().type}}: {{type.type}}</mat-list-item>
-      <mat-list-item>{{translations().list}}:@if(type.balance && type.premium) { {{translations().listBoth}} } @else {
-        {{translations().listPremium}}
-      }</mat-list-item>
-    <mat-list-item>{{translations().coPayment}}:</mat-list-item>
-    @if (type.special) {
-    <mat-list-item>{{translations().isSpecialClinic}}</mat-list-item>}
+  @for (type of translatedServiceProvider().types; track type) {
+    <mat-list-item>{{ type.type }}</mat-list-item>
+    <mat-list-item>{{ type.list }} </mat-list-item>
+    @if (type.higherCoPayment) {
+      <mat-list-item>{{ type.higherCoPayment }}</mat-list-item>
+    }
+    @if (type.maxRate) {
+      <mat-list-item>{{ type.maxRate }}</mat-list-item>
+    }
     <mat-divider></mat-divider>
   }
 </mat-list>

@@ -11,8 +11,10 @@ import { MatFormField, MatInput, MatLabel } from '@angular/material/input';
 import { map, Observable, startWith } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 import { CoverageComponent } from './features/coverage/coverage.component';
-import { translationsDe } from '../../translations/translations';
+import { translationsDe } from '../../mock-inputs/translations';
 import { Translations } from './models/translations.model';
+import { customer } from '../../mock-inputs/customer';
+import { mapServiceProvider } from './helpers/helpers';
 
 @Component({
   selector: 'app-root',
@@ -40,6 +42,7 @@ export class AppComponent {
   filteredOptions: Observable<ServiceProvider[]>;
   isSelected = signal(false);
   selectedServiceProvider = signal<ServiceProvider | undefined>(undefined);
+  customer = customer;
 
   private _filterOptions(value: string): ServiceProvider[] {
     const filterValue = value.toLowerCase();
@@ -79,5 +82,13 @@ export class AppComponent {
           this.serviceProviders.set(response);
         },
       });
+  }
+
+  translate() {
+    return mapServiceProvider(
+      this.selectedServiceProvider()!,
+      this.translations,
+      this.customer,
+    );
   }
 }

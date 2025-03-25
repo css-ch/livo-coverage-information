@@ -1,5 +1,6 @@
 # Ignore artifacts:
 build
 coverage
+!/src/app/features/coverage
 node_modules
 .angular

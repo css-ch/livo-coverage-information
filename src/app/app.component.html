@@ -1,23 +1,24 @@
-<form class="example-form">
-  <mat-form-field class="example-full-width">
-    <mat-label>{{ translations.serviceProvider }}</mat-label>
-    <input matInput [formControl]="formControl" [matAutocomplete]="auto" />
-    <mat-autocomplete
-      (optionSelected)="optionSelected()"
-      #auto="matAutocomplete"
-    >
-      @for (serviceProvider of filteredOptions | async; track serviceProvider) {
-        <mat-option [value]="serviceProvider.name"
-          >{{ serviceProvider.name }}, {{ serviceProvider.town }}</mat-option
-        >
-      }
-    </mat-autocomplete>
-  </mat-form-field>
-</form>
-
-@if (isSelected()) {
-  <app-coverage
-    [serviceProvider]="selectedServiceProvider()!"
-    [translations]="translations"
-  ></app-coverage>
-}
+<div class="wrapper">
+  <form>
+    <mat-form-field class="form-field">
+      <mat-label>{{ translations.serviceProvider }}</mat-label>
+      <input matInput [formControl]="formControl" [matAutocomplete]="auto" />
+      <mat-autocomplete
+        (optionSelected)="optionSelected()"
+        #auto="matAutocomplete"
+      >
+        @for (
+          serviceProvider of filteredOptions | async;
+          track serviceProvider
+        ) {
+          <mat-option [value]="serviceProvider.name"
+            >{{ serviceProvider.name }}, {{ serviceProvider.town }}</mat-option
+          >
+        }
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+  @if (isSelected()) {
+    <app-coverage [translatedServiceProvider]="translate()"></app-coverage>
+  }
+</div>

@@ -1,20 +1,14 @@
-import {Component, input} from '@angular/core';
-import {ServiceProvider} from '../../models/service-provider.model';
-import {MatDivider, MatList, MatListItem} from '@angular/material/list';
-import {Translations} from '../../models/translations.model';
+import { Component, input } from '@angular/core';
+import { TranslatedServiceProvider } from '../../models/service-provider.model';
+import { MatDivider, MatList, MatListItem } from '@angular/material/list';
 
 @Component({
   selector: 'app-coverage',
-  imports: [
-    MatList,
-    MatListItem,
-    MatDivider
-  ],
+  imports: [MatList, MatListItem, MatDivider],
   templateUrl: './coverage.component.html',
   standalone: true,
-  styleUrl: './coverage.component.scss'
+  styleUrl: './coverage.component.scss',
 })
 export class CoverageComponent {
-  serviceProvider = input.required<ServiceProvider>();
-  translations = input.required<Translations>();
+  translatedServiceProvider = input.required<TranslatedServiceProvider>();
 }
