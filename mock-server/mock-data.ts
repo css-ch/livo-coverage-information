@@ -1,11 +1,13 @@
-export const mockData = [
+import { ServiceProvider } from '../src/app/models/service-provider.model';
+
+export const mockData: ServiceProvider[] = [
   {
     id: 1,
     name: 'Hirslanden Klinik Aarau',
     town: 'Aarau',
     types: [
       {
-        type: 'Akut',
+        type: 'acute',
         balance: true,
         premium: true,
         hasMaxRate: false,
@@ -18,7 +20,7 @@ export const mockData = [
     town: 'Münschenstein',
     types: [
       {
-        type: 'Akut',
+        type: 'acute',
         balance: true,
         premium: true,
         hasMaxRate: false,
@@ -31,7 +33,7 @@ export const mockData = [
     town: 'Biel',
     types: [
       {
-        type: 'Akut',
+        type: 'acute',
         balance: true,
         premium: true,
         hasMaxRate: false,
@@ -44,7 +46,7 @@ export const mockData = [
     town: 'Genève',
     types: [
       {
-        type: 'Akut',
+        type: 'acute',
         balance: false,
         premium: true,
         hasMaxRate: true,
@@ -57,7 +59,7 @@ export const mockData = [
     town: 'Luzern',
     types: [
       {
-        type: 'Akut',
+        type: 'acute',
         balance: true,
         premium: true,
         hasMaxRate: false,
@@ -70,7 +72,7 @@ export const mockData = [
     town: 'Meggen',
     types: [
       {
-        type: 'Akut',
+        type: 'acute',
         balance: true,
         premium: true,
         hasMaxRate: false,
@@ -83,7 +85,7 @@ export const mockData = [
     town: 'Zürich',
     types: [
       {
-        type: 'Akut',
+        type: 'acute',
         balance: false,
         premium: true,
         hasMaxRate: false,
@@ -96,19 +98,19 @@ export const mockData = [
     town: 'Zürich',
     types: [
       {
-        type: 'Akut',
+        type: 'acute',
         balance: true,
         premium: true,
         hasMaxRate: false,
       },
       {
-        type: 'Psychiatrie',
+        type: 'psychiatry',
         balance: true,
         premium: true,
         hasMaxRate: false,
       },
       {
-        type: 'Reha',
+        type: 'rehab',
         balance: true,
         premium: true,
         hasMaxRate: false,
@@ -121,13 +123,13 @@ export const mockData = [
     town: 'Bern',
     types: [
       {
-        type: 'Akut',
+        type: 'acute',
         balance: true,
         premium: true,
         hasMaxRate: false,
       },
       {
-        type: 'Reha',
+        type: 'rehab',
         balance: false,
         premium: true,
         hasMaxRate: false,

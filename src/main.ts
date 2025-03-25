@@ -1,6 +1,6 @@
 import { createApplication } from '@angular/platform-browser';
 import { appConfig } from './app/app.config';
-import { AppComponent } from './app/app.component';
+import { AppContainerComponent } from './app/app.container.component';
 import { createCustomElement } from '@angular/elements';
 import { isDevMode } from '@angular/core';
 import { worker } from '../mock-server/browser';
@@ -15,9 +15,12 @@ async function enableMocking() {
 enableMocking().then(() => {
   createApplication(appConfig)
     .then((app) => {
-      const LivoCoverageInformation = createCustomElement(AppComponent, {
-        injector: app.injector,
-      });
+      const LivoCoverageInformation = createCustomElement(
+        AppContainerComponent,
+        {
+          injector: app.injector,
+        },
+      );
       customElements.define(
         'livo-coverage-information',
         LivoCoverageInformation,
