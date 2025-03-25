@@ -1,3 +1,13 @@
+# [0.8.0](https://github.com/css-ch/livo-coverage-information/compare/v0.7.0...v0.8.0) (2025-03-25)
+
+
+### Features
+
+* show coverage information ([3d6b78d](https://github.com/css-ch/livo-coverage-information/commit/3d6b78d94b3ee4eafb6731d1f7fc814f40175378))
+* translate coverage ([4c0297e](https://github.com/css-ch/livo-coverage-information/commit/4c0297ea48e384f4ac5691763ccba50e246dbf0b))
+
+
+
 # [0.7.0](https://github.com/css-ch/livo-coverage-information/compare/v0.6.1...v0.7.0) (2025-03-24)
 
 
