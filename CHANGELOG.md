@@ -1,3 +1,12 @@
+# [0.9.0](https://github.com/css-ch/livo-coverage-information/compare/v0.8.0...v0.9.0) (2025-03-25)
+
+
+### Features
+
+* storybook ([705fee6](https://github.com/css-ch/livo-coverage-information/commit/705fee67a40b2095a0782bf80267d2b374d9510a))
+
+
+
 # [0.8.0](https://github.com/css-ch/livo-coverage-information/compare/v0.7.0...v0.8.0) (2025-03-25)
 
 
