@@ -1,3 +1,13 @@
+# [0.12.0](https://github.com/css-ch/livo-coverage-information/compare/v0.11.0...v0.12.0) (2025-03-26)
+
+
+### Features
+
+* add divider for types ([0c717ca](https://github.com/css-ch/livo-coverage-information/commit/0c717ca304e90d09c114fc7156f7a3249a70d78a))
+* new stories ([b82990d](https://github.com/css-ch/livo-coverage-information/commit/b82990d410e045b2e079edd8e58a6dcfb4a54ebb))
+
+
+
 # [0.11.0](https://github.com/css-ch/livo-coverage-information/compare/v0.10.0...v0.11.0) (2025-03-26)
 
 
