@@ -44,7 +44,7 @@ function translateCoPayment(
   translations: Translations,
   insurance: Insurance,
 ): string | undefined {
-  if (type.premium && insurance == 'balance') {
+  if (!type.balance && insurance == 'balance') {
     return translations.higherCoPayment;
   }
   return undefined;

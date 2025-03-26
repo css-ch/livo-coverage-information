@@ -2,16 +2,17 @@
   >{{ translatedServiceProvider().name }},
   {{ translatedServiceProvider().town }}</b
 >
-<mat-list>
+<div class="coverage-list">
   @for (type of translatedServiceProvider().types; track type) {
-    <mat-list-item>{{ type.type }}</mat-list-item>
-    <mat-list-item>{{ type.list }} </mat-list-item>
-    @if (type.higherCoPayment) {
-      <mat-list-item>{{ type.higherCoPayment }}</mat-list-item>
-    }
+    <b>{{ type.type }}</b>
+    <ul>
+      <li>{{ type.list }}</li>
+      @if (type.higherCoPayment) {
+        <li>{{ type.higherCoPayment }}</li>
+      }
+    </ul>
     @if (type.maxRate) {
-      <mat-list-item>{{ type.maxRate }}</mat-list-item>
+      <span>{{ type.maxRate }}</span>
     }
-    <mat-divider></mat-divider>
   }
-</mat-list>
+</div>
