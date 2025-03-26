@@ -1,7 +1,7 @@
 import { Component, input, signal } from '@angular/core';
 import { Translations } from '../../models/translations.model';
 import { ServiceProvider } from '../../models/service-provider.model';
-import { Insurance } from '../../models/customer.model';
+import { Insurance } from '../../models/insurance.model';
 import { AsyncPipe } from '@angular/common';
 import { CoverageComponent } from '../coverage/coverage.component';
 import {

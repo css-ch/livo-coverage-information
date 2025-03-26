@@ -2,8 +2,8 @@ import { Component, inject, input, OnInit, signal } from '@angular/core';
 import { ServiceProviderService } from './services/service-provider.service';
 import { ServiceProvider } from './models/service-provider.model';
 import { SearchComponent } from './features/search/search.component';
-import { translationsDe } from '../../mock-inputs/translations';
-import { customer } from '../../mock-inputs/customer';
+import { Translations } from './models/translations.model';
+import { Insurance } from './models/insurance.model';
 
 @Component({
   selector: 'app-root',
@@ -13,8 +13,8 @@ import { customer } from '../../mock-inputs/customer';
 })
 export class AppContainerComponent implements OnInit {
   baseUrl = input.required<string>();
-  translations = translationsDe;
-  insurance = customer;
+  translations = input.required<Translations>();
+  insurance = input.required<Insurance>();
   serviceProviders = signal<ServiceProvider[]>([]);
   private serviceProviderService = inject(ServiceProviderService);
 
