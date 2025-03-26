@@ -10,7 +10,10 @@ const meta: Meta<SearchComponent> = {
   args: {
     translations: translationsDe,
     serviceProviders: mockData,
-    insurance: 'premium',
+    insurance: {
+      variant: 2,
+      livo: 'balance',
+    },
   },
   argTypes: {
     translations: {
@@ -20,8 +23,7 @@ const meta: Meta<SearchComponent> = {
       control: { type: 'object' },
     },
     insurance: {
-      options: ['balance', 'premium'],
-      control: { type: 'radio' },
+      control: { type: 'object' },
     },
   },
   decorators: [applicationConfig(storybookApplicationConfig)],

@@ -23,6 +23,6 @@ export type TranslatedServiceProvider = {
 export type TranslatedTypes = {
   type: string;
   list: string;
-  higherCoPayment: string | undefined;
+  coPayment: string;
   maxRate: string | undefined;
 };

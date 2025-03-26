@@ -7,5 +7,10 @@ export type Translations = {
   listPremiumOnly: string;
   listBoth: string;
   maxRateNote: string;
+  variant1: string;
+  variant2: string;
+  variant3: string;
   higherCoPayment: string;
+  notOnListError: string;
+  notOnListCoPayment: string;
 };
