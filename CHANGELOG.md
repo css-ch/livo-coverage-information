@@ -1,3 +1,12 @@
+# [0.13.0](https://github.com/css-ch/livo-coverage-information/compare/v0.12.1...v0.13.0) (2025-03-26)
+
+
+### Features
+
+* show exakt coverage ([f073ef8](https://github.com/css-ch/livo-coverage-information/commit/f073ef84994f5eda5b277f005b4c2821a8812217))
+
+
+
 ## [0.12.1](https://github.com/css-ch/livo-coverage-information/compare/v0.12.0...v0.12.1) (2025-03-26)
 
 
