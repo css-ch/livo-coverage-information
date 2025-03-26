@@ -1,3 +1,17 @@
+# [0.11.0](https://github.com/css-ch/livo-coverage-information/compare/v0.10.0...v0.11.0) (2025-03-26)
+
+
+### Bug Fixes
+
+* fix logic ([f257187](https://github.com/css-ch/livo-coverage-information/commit/f25718798ceaa17136a81735ad66fb5be85d0bc2))
+
+
+### Features
+
+* new styling for coverage information ([66157ec](https://github.com/css-ch/livo-coverage-information/commit/66157ecfba3f84ba5d5de3a4d0e83dc0f37ca93c))
+
+
+
 # [0.10.0](https://github.com/css-ch/livo-coverage-information/compare/v0.9.0...v0.10.0) (2025-03-26)
 
 
