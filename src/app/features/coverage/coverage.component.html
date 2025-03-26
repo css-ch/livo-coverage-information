@@ -2,8 +2,9 @@
   >{{ translatedServiceProvider().name }},
   {{ translatedServiceProvider().town }}</b
 >
-<div class="coverage-list">
-  @for (type of translatedServiceProvider().types; track type) {
+
+@for (type of translatedServiceProvider().types; track type) {
+  <div class="coverage-list">
     <b>{{ type.type }}</b>
     <ul>
       <li>{{ type.list }}</li>
@@ -14,5 +15,11 @@
     @if (type.maxRate) {
       <span>{{ type.maxRate }}</span>
     }
-  }
-</div>
+    @if (
+      translatedServiceProvider().types.length > 1 &&
+      $index < translatedServiceProvider().types.length - 1
+    ) {
+      <mat-divider></mat-divider>
+    }
+  </div>
+}
