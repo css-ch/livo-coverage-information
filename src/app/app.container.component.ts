@@ -9,7 +9,6 @@ import { customer } from '../../mock-inputs/customer';
   selector: 'app-root',
   imports: [SearchComponent],
   templateUrl: './app.container.component.html',
-  styleUrls: ['./app.container.component.scss'],
   standalone: true,
 })
 export class AppContainerComponent implements OnInit {
