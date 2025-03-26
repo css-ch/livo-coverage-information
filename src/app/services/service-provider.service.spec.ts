@@ -4,6 +4,7 @@ import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { ServiceProviderService } from './service-provider.service';
 import { HttpTestingController } from '@angular/common/http/testing';
 import { ServiceProvider } from '../models/service-provider.model';
+// Created with ChatGPT
 
 describe('ServiceProviderService', () => {
   let service: ServiceProviderService;
