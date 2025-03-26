@@ -1,3 +1,19 @@
+# [0.10.0](https://github.com/css-ch/livo-coverage-information/compare/v0.9.0...v0.10.0) (2025-03-26)
+
+
+### Bug Fixes
+
+* accept all inputs ([36c6111](https://github.com/css-ch/livo-coverage-information/commit/36c6111c9f7afaa999c3301dba3b97fceef55406))
+* remove stylesheet import in container ([37699ec](https://github.com/css-ch/livo-coverage-information/commit/37699ec3262e7d107a11a0af4339813f86abce96))
+
+
+### Features
+
+* accept url input ([2619f77](https://github.com/css-ch/livo-coverage-information/commit/2619f77cb75d10d38b20981930fe450e09d4a2fd))
+* load fonts in storybook ([9919871](https://github.com/css-ch/livo-coverage-information/commit/9919871c2c5cc1f1be3ffc13a32a9580a588a5da))
+
+
+
 # [0.9.0](https://github.com/css-ch/livo-coverage-information/compare/v0.8.0...v0.9.0) (2025-03-25)
 
 
