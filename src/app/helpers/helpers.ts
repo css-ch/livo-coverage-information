@@ -5,7 +5,7 @@ import {
   Types,
 } from '../models/service-provider.model';
 import { Translations } from '../models/translations.model';
-import { Insurance } from '../models/customer.model';
+import { Insurance } from '../models/insurance.model';
 
 export function mapServiceProvider(
   provider: ServiceProvider,
