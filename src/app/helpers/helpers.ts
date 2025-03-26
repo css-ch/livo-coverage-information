@@ -18,7 +18,7 @@ export function mapServiceProvider(
     types: provider.types.map((type) => ({
       type: translateType(type.type, translations),
       list: type.balance ? translations.listBoth : translations.listPremiumOnly,
-      higherCoPayment: translateCoPayment(type, translations, insurance),
+      coPayment: translateCoPayment(type, translations, insurance),
       maxRate: type.hasMaxRate ? translations.maxRateNote : undefined,
     })),
   };
@@ -43,9 +43,23 @@ function translateCoPayment(
   type: Types,
   translations: Translations,
   insurance: Insurance,
-): string | undefined {
-  if (!type.balance && insurance == 'balance') {
+): string {
+  if (!type.balance && insurance.livo == 'balance') {
     return translations.higherCoPayment;
   }
-  return undefined;
+  return getCoPaymentByVariant(translations, insurance);
+}
+
+function getCoPaymentByVariant(
+  translations: Translations,
+  insurance: Insurance,
+): string {
+  switch (insurance.variant) {
+    case 1:
+      return translations.variant1;
+    case 2:
+      return translations.variant2;
+    case 3:
+      return translations.variant3;
+  }
 }

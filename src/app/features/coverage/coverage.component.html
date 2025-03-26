@@ -8,9 +8,7 @@
     <b>{{ type.type }}</b>
     <ul>
       <li>{{ type.list }}</li>
-      @if (type.higherCoPayment) {
-        <li>{{ type.higherCoPayment }}</li>
-      }
+      <li>{{ type.coPayment }}</li>
     </ul>
     @if (type.maxRate) {
       <span>{{ type.maxRate }}</span>
