@@ -1,7 +1,7 @@
 import { applicationConfig, Meta, StoryObj } from '@storybook/angular';
 import { SearchComponent } from './search.component';
 import { storybookApplicationConfig } from '../../../../.storybook/storybook-application-config';
-import { translationsDe } from '../../../../mock-inputs/translations';
+import { translationsDe } from '../../../../.storybook/mock-inputs/translations';
 import { mockData } from '../../../../mock-server/mock-data';
 
 const meta: Meta<SearchComponent> = {

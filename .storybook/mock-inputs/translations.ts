@@ -1,10 +1,10 @@
-import { Translations } from '../src/app/models/translations.model';
+import { Translations } from '../../src/app/models/translations.model';
 
 export const translationsDe: Translations = {
   acute: 'Akut',
   listBoth: 'Ist auf Liste Balance und Premium',
   listPremiumOnly: 'Ist nur auf Liste Premium',
-  psychiatry: 'Psychiatry',
+  psychiatry: 'Psychiatrie',
   rehab: 'Reha',
   serviceProvider: 'Leistungserbringer',
   maxRateNote:
