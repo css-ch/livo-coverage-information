@@ -18,8 +18,6 @@ export class AppContainerComponent implements OnInit {
   serviceProviders = signal<ServiceProvider[]>([]);
   private serviceProviderService = inject(ServiceProviderService);
 
-  constructor() {}
-
   ngOnInit() {
     this.getServiceProviders();
   }
