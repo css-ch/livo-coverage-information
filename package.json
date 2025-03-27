@@ -11,7 +11,9 @@
     "test": "jest",
     "prepare": "husky",
     "storybook": "ng run livo-coverage-information:storybook",
-    "build-storybook": "ng run livo-coverage-information:build-storybook"
+    "build-storybook": "ng run livo-coverage-information:build-storybook",
+    "playwright:install": "npx playwright install --with-deps",
+    "playwright": "cd e2e && npx playwright test"
   },
   "dependencies": {
     "@angular/cdk": "^19.2.6",
