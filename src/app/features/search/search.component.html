@@ -4,7 +4,7 @@
       <mat-label>{{ translations().serviceProvider }}</mat-label>
       <input matInput [formControl]="formControl" [matAutocomplete]="auto" />
       <mat-autocomplete
-        (optionSelected)="optionSelected()"
+        (optionSelected)="onOptionSelected()"
         #auto="matAutocomplete"
       >
         @for (
@@ -18,7 +18,12 @@
       </mat-autocomplete>
     </mat-form-field>
   </form>
-  @if (isSelected()) {
+  @if (noServiceProvidersFound()) {
+    <b>{{ translations().notOnListError }}</b>
+    <ul>
+      <li>{{ translations().notOnListCoPayment }}</li>
+    </ul>
+  } @else if (isSelected()) {
     <app-coverage [translatedServiceProvider]="translate()"></app-coverage>
   }
 </div>

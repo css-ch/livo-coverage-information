@@ -15,5 +15,5 @@ export const translationsDe: Translations = {
   variant2: 'Variante 2: KoBe 25% max. CHF 5’000/KJ',
   variant3: 'Variante 3: KoBe 50% max. CHF 10’000/KJ',
   notOnListCoPayment: 'KoBe min. 75%. Die CSS deckt max. CHF 1‘500/Nacht',
-  notOnListError: 'not found',
+  notOnListError: 'Kein Leistungserbringer gefunden',
 };
