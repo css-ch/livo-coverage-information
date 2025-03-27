@@ -2,7 +2,12 @@
   <form>
     <mat-form-field class="form-field">
       <mat-label>{{ translations().serviceProvider }}</mat-label>
-      <input matInput [formControl]="formControl" [matAutocomplete]="auto" />
+      <input
+        matInput
+        [formControl]="formControl"
+        [matAutocomplete]="auto"
+        data-testid="search-bar"
+      />
       <mat-autocomplete
         (optionSelected)="onOptionSelected()"
         #auto="matAutocomplete"
@@ -11,7 +16,9 @@
           serviceProvider of filteredOptions | async;
           track serviceProvider
         ) {
-          <mat-option [value]="serviceProvider.name"
+          <mat-option
+            [value]="serviceProvider.name"
+            data-testid="autocomplete-option"
             >{{ serviceProvider.name }}, {{ serviceProvider.town }}</mat-option
           >
         }
@@ -19,7 +26,9 @@
     </mat-form-field>
   </form>
   @if (noServiceProvidersFound()) {
-    <b>{{ translations().notOnListError }}</b>
+    <b data-testid="no-service-provider-found">{{
+      translations().notOnListError
+    }}</b>
     <ul>
       <li>{{ translations().notOnListCoPayment }}</li>
     </ul>

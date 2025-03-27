@@ -4,14 +4,14 @@
 >
 
 @for (type of translatedServiceProvider().types; track type) {
-  <div class="coverage-list">
+  <div class="coverage-list" data-testid="coverage-information">
     <b>{{ type.type }}</b>
     <ul>
       <li>{{ type.list }}</li>
       <li>{{ type.coPayment }}</li>
     </ul>
     @if (type.maxRate) {
-      <span>{{ type.maxRate }}</span>
+      <span data-testid="max-rate-note">{{ type.maxRate }}</span>
     }
     @if (
       translatedServiceProvider().types.length > 1 &&
