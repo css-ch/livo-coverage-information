@@ -1,3 +1,17 @@
+# [1.0.0](https://github.com/css-ch/livo-coverage-information/compare/v0.14.1...v1.0.0) (2025-03-27)
+
+
+### Documentation
+
+* updated readme ([e40cdc1](https://github.com/css-ch/livo-coverage-information/commit/e40cdc1d43f50a17c46e560878f6385185c427fc))
+
+
+### BREAKING CHANGES
+
+* web component is ready for usage
+
+
+
 ## [0.14.1](https://github.com/css-ch/livo-coverage-information/compare/v0.14.0...v0.14.1) (2025-03-27)
 
 

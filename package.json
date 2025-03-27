@@ -1,6 +1,6 @@
 {
   "name": "@css-ch/livo-coverage-information",
-  "version": "0.14.1",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "ng": "ng",
