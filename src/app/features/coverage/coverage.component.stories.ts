@@ -41,19 +41,19 @@ export const MultipleTypes: Story = {
         {
           type: 'Akut',
           list: 'Ist auf Liste Balance und Premium',
-          coPayment: 'blabla',
+          coPayment: 'Variante 2: KoBe 25% max. CHF 5’000/KJ',
           maxRate: undefined,
         },
         {
           type: 'Psychiatrie',
           list: 'Ist auf Liste Balance und Premium',
-          coPayment: 'blabla',
+          coPayment: 'Variante 2: KoBe 25% max. CHF 5’000/KJ',
           maxRate: undefined,
         },
         {
           type: 'Reha',
           list: 'Ist auf Liste Balance und Premium',
-          coPayment: 'blabla',
+          coPayment: 'Variante 2: KoBe 25% max. CHF 5’000/KJ',
           maxRate: undefined,
         },
       ],
@@ -70,7 +70,7 @@ export const OnlyPremium: Story = {
         {
           type: 'Akut',
           list: 'Ist nur auf Liste Premium',
-          coPayment: 'blabla',
+          coPayment: 'Variante 2: KoBe 25% max. CHF 5’000/KJ',
           maxRate: undefined,
         },
       ],
@@ -87,7 +87,7 @@ export const WithMaxRate: Story = {
         {
           type: 'Akut',
           list: 'Ist nur auf Liste Premium',
-          coPayment: 'blabla',
+          coPayment: 'KoBe 75%, max. CHF 10‘000/KJ',
           maxRate:
             'Bei diesem Leistungserbringer ist ein Maximaltarif festgelegt. Auf welche Leistungen dieser bezogen ist und in welcher Höhe dieser ausfällt, respektive wie hoch die jeweilige Deckung und eine allfällige Kostenbeteiligung sind, wird vor dem Spitaleintritt im Rahmen der Kostengutsprache mitgeteilt.',
         },
@@ -105,7 +105,7 @@ export const HigherCoPayment: Story = {
         {
           type: 'Akut',
           list: 'Ist nur auf Liste Premium',
-          coPayment: 'Die KoBe fällt höher aus',
+          coPayment: 'KoBe 75%, max. CHF 10‘000/KJ',
           maxRate: undefined,
         },
       ],

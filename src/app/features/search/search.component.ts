@@ -41,15 +41,22 @@ export class SearchComponent {
   formControl = new FormControl('');
   selectedServiceProvider = signal<ServiceProvider | undefined>(undefined);
   isSelected = signal(false);
+  noServiceProvidersFound = signal(false);
 
   constructor() {
     this.filteredOptions = this.formControl.valueChanges.pipe(
       startWith(''),
-      map((provider) =>
-        provider
-          ? this._filterOptions(provider)
-          : this.serviceProviders().slice(),
-      ),
+      map((provider) => {
+        this.noServiceProvidersFound.set(false);
+        if (provider) {
+          const filteredOptions = this._filterOptions(provider);
+          this.noServiceProvidersFound.set(!(filteredOptions.length > 0));
+          this.isSelected.set(false);
+          return filteredOptions;
+        } else {
+          return this.serviceProviders().slice();
+        }
+      }),
     );
   }
 
@@ -62,7 +69,7 @@ export class SearchComponent {
     );
   }
 
-  optionSelected() {
+  onOptionSelected() {
     this.isSelected.set(true);
     this.selectedServiceProvider.set(
       this.serviceProviders().find(
