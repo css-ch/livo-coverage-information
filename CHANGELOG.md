@@ -1,3 +1,12 @@
+# [0.14.0](https://github.com/css-ch/livo-coverage-information/compare/v0.13.0...v0.14.0) (2025-03-27)
+
+
+### Features
+
+* fallback and stories updated ([3649c1c](https://github.com/css-ch/livo-coverage-information/commit/3649c1c4b4be53f41ffb83c67ac66dffc8bdc940))
+
+
+
 # [0.13.0](https://github.com/css-ch/livo-coverage-information/compare/v0.12.1...v0.13.0) (2025-03-26)
 
 
