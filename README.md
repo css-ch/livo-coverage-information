@@ -1,59 +1,88 @@
 # LivoCoverageInformation
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.4.
+## Inputs
 
-## Development server
+### baseUrl
+Url should point to the api used to fetch service providers
+- Type: string
 
-To start a local development server, run:
-
-```bash
-ng serve
+### translations
+An object containing all necessary translations
+- Type: object of strings
+``` typescript
+// for example:
+{
+  acute: 'Akut',
+  listBoth: 'Ist auf Liste Balance und Premium',
+  listPremiumOnly: 'Ist nur auf Liste Premium',
+  psychiatry: 'Psychiatrie',
+  rehab: 'Reha',
+  serviceProvider: 'Leistungserbringer',
+  maxRateNote: 'Bei diesem Leistungserbringer ist ein Maximaltarif festgelegt. Auf welche Leistungen dieser bezogen ist und in welcher Höhe dieser ausfällt, respektive wie hoch die jeweilige Deckung und eine allfällige Kostenbeteiligung sind, wird vor dem Spitaleintritt im Rahmen der Kostengutsprache mitgeteilt.',
+  specialisedClinic: 'Spezialklinik',
+  higherCoPayment: 'KoBe 75%, max. CHF 10‘000/KJ',
+  variant1: 'Variante 1: KoBe CHF 0',
+  variant2: 'Variante 2: KoBe 25% max. CHF 5’000/KJ',
+  variant3: 'Variante 3: KoBe 50% max. CHF 10’000/KJ',
+  notOnListCoPayment: 'KoBe min. 75%. Die CSS deckt max. CHF 1‘500/Nacht',
+  notOnListError: 'Kein Leistungserbringer gefunden',
+}
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+### insurance
+An object containing the necessary insurance information of the current customer
+- Type: object
+```typescript
+type insurance = {
+  livo: 'balance' | 'premium';
+  variant: 1 | 2 | 3;
+}
 ```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
+---
+## Usage in angular project
+1. import `main.js` to desired component
+```typescript
+// sample.component.ts
+import '@css-ch/livo-coverage-information/dist/main.js'
 ```
+2. import `CUSTOM_ELEMENTS_SCHEMA` and add to component decorators
+```typescript
+// sample.component.ts
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+// other imports
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
+@Component({
+// other decorators
+schemas: [CUSTOM_ELEMENTS_SCHEMA]
+})
 ```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
+3. use custom tag in template and provide with inputs
+```html
+// sample.component.html
+<livo-coverage-information [baseUrl]="'https://sampleapi.com'" [translations]="myTranslationObject" [insurance]="myInsuranceObject"></livo-coverage-information>
 ```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
+4. import styles
+```scss
+@import "@css-ch/livo-coverage-information/dist/styles";
 ```
+---
+## API
+They API is called on the baseURL with a get request and should return a JSON object. They JSON should equivalent to following the typescript interface:
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```typescript
+type ServiceProvider = [
+  {
+    id: number;
+    name: string;
+    town: string;
+    types: [
+      {
+        type: 'acute' | 'rehab' | 'psychiatry' | 'specialised';
+        balance: boolean;
+        premium: boolean;
+        hasMaxRate: boolean;
+      },
+    ];
+  },
+];
+```
