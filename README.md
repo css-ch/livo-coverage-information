@@ -63,6 +63,7 @@ schemas: [CUSTOM_ELEMENTS_SCHEMA]
 ```
 4. import styles
 ```scss
+// styles.scss
 @import "@css-ch/livo-coverage-information/dist/styles";
 ```
 ---
